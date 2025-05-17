@@ -20,8 +20,6 @@ add_library(imgui
         "${imgui_SOURCE_DIR}/imgui_demo.cpp"
         "${imgui_SOURCE_DIR}/imgui_draw.cpp"
         "${imgui_SOURCE_DIR}/imgui_widgets.cpp"
-        "${imgui_SOURCE_DIR}/imgui_spectrum.h"
-        "${imgui_SOURCE_DIR}/imgui_spectrum.cpp"
         "${imgui_SOURCE_DIR}/imgui_tables.cpp"
 )
 add_library(imgui::imgui ALIAS imgui)
