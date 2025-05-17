@@ -33,10 +33,9 @@ target_sources(${PROJECT_NAME}
         imgui_opengl3.ixx)
 
 install(TARGETS ${PROJECT_NAME}
-        LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib
-        RUNTIME DESTINATION bin
-        FILE_SET cxx_modules DESTINATION lib/cxx/modules)
+        LIBRARY DESTINATION lib
+)
 
 install(FILES
         imgui.h
