@@ -31,3 +31,21 @@ target_sources(${PROJECT_NAME}
         TYPE CXX_MODULES
         FILES
         imgui_opengl3.ixx)
+
+install(TARGETS ${PROJECT_NAME}
+        FILE_SET cxx_modules
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib
+        RUNTIME DESTINATION bin)
+
+install(FILES
+        imgui.h
+        imconfig.h
+        imgui_internal.h
+        imstb_rectpack.h
+        imstb_textedit.h
+        imstb_truetype.h
+        backends/imgui_impl_glfw.h
+        backends/imgui_impl_opengl3.h
+        backends/imgui_impl_opengl3_loader.h
+        DESTINATION include)
