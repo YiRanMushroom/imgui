@@ -107,24 +107,6 @@ elseif(IMGUI_BACKEND_PLATFORM STREQUAL "android")
     # untested, needs work
 elseif(IMGUI_BACKEND_PLATFORM STREQUAL "glfw")
     target_sources(imgui PRIVATE "${imgui_SOURCE_DIR}/backends/imgui_impl_glfw.h" "${imgui_SOURCE_DIR}/backends/imgui_impl_glfw.cpp")
-
-    if(NOT TARGET glfw)
-        include(FetchContent)
-        FetchContent_Declare(
-            glfw
-            GIT_REPOSITORY https://github.com/glfw/glfw.git
-            GIT_TAG tags/3.3
-            GIT_SHALLOW TRUE
-        )
-
-        option(GLFW_BUILD_EXAMPLES "Build the GLFW example programs" OFF)
-        option(GLFW_BUILD_TESTS "Build the GLFW test programs" OFF)
-        option(GLFW_BUILD_DOCS "Build the GLFW documentation" OFF)
-        option(GLFW_INSTALL "Generate installation target" OFF)
-        option(GLFW_VULKAN_STATIC "Use the Vulkan loader statically linked into application" OFF)
-        FetchContent_MakeAvailable(glfw)
-    endif()
-
     target_link_libraries(imgui PUBLIC glfw)
 elseif(IMGUI_BACKEND_PLATFORM STREQUAL "glut")
     target_sources(imgui PRIVATE "${imgui_SOURCE_DIR}/backends/imgui_impl_glut.h" "${imgui_SOURCE_DIR}/backends/imgui_impl_glut.cpp")
