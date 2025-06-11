@@ -120,7 +120,7 @@ elseif(IMGUI_BACKEND_PLATFORM STREQUAL "sdl2")
     # untested, needs work
 elseif(IMGUI_BACKEND_PLATFORM STREQUAL "sdl3")
     target_sources(imgui PRIVATE "${imgui_SOURCE_DIR}/backends/imgui_impl_sdl3.h" "${imgui_SOURCE_DIR}/backends/imgui_impl_sdl3.cpp")
-    # untested, needs work
+    target_link_libraries(imgui PRIVATE SDL3::SDL3)
 elseif(IMGUI_BACKEND_PLATFORM STREQUAL "win32")
     target_sources(imgui PRIVATE "${imgui_SOURCE_DIR}/backends/imgui_impl_win32.h" "${imgui_SOURCE_DIR}/backends/imgui_impl_win32.cpp")
 endif()
